@@ -1,0 +1,245 @@
+/* line 24, ../sass/drum.scss */
+.mesh {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-style: preserve-3d;
+}
+
+/* line 28, ../sass/drum.scss */
+.mesh > div {
+  position: absolute;
+  transform-style: preserve-3d;
+  background-image: url("https://keithclark.co.uk/labs/css-fps/drum2.png");
+  background-visibility: hidden;
+}
+
+/* line 32, ../sass/drum.scss */
+.mesh > .top {
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  transform: translate3d(0px, -98px, 0px) rotateX(1.5708rad) rotateY(0rad) rotateZ(0rad);
+  background-position: 0px 100px;
+}
+
+/* line 35, ../sass/drum.scss */
+.mesh > .bottom {
+  width: 100px;
+  height: 100px;
+  margin-top: -50px;
+  margin-left: -50px;
+  transform: translate3d(0px, 98px, 0px) rotateX(-1.5708rad) rotateY(0rad) rotateZ(0rad);
+  background-position: 0px 100px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(1) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(0px, 0px, 50px) rotateX(0rad) rotateY(0rad) rotateZ(0rad);
+  background-position: 0px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(2) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(3.92295px, 0px, 49.84587px) rotateX(0rad) rotateY(0.07854rad) rotateZ(0rad);
+  background-position: -15.83844px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(3) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(7.82172px, 0px, 49.38442px) rotateX(0rad) rotateY(0.15708rad) rotateZ(0rad);
+  background-position: -31.67689px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(4) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(11.67227px, 0px, 48.6185px) rotateX(0rad) rotateY(0.23562rad) rotateZ(0rad);
+  background-position: -47.51533px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(5) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(15.45085px, 0px, 47.55283px) rotateX(0rad) rotateY(0.31416rad) rotateZ(0rad);
+  background-position: -63.35378px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(6) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(19.13417px, 0px, 46.19398px) rotateX(0rad) rotateY(0.3927rad) rotateZ(0rad);
+  background-position: -79.19222px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(7) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(22.69952px, 0px, 44.55033px) rotateX(0rad) rotateY(0.47124rad) rotateZ(0rad);
+  background-position: -95.03066px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(8) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(26.12493px, 0px, 42.63201px) rotateX(0rad) rotateY(0.54978rad) rotateZ(0rad);
+  background-position: -110.86911px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(9) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(29.38926px, 0px, 40.45085px) rotateX(0rad) rotateY(0.62832rad) rotateZ(0rad);
+  background-position: -126.70755px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(10) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(32.4724px, 0px, 38.0203px) rotateX(0rad) rotateY(0.70686rad) rotateZ(0rad);
+  background-position: -142.546px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(11) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(35.35534px, 0px, 35.35534px) rotateX(0rad) rotateY(0.7854rad) rotateZ(0rad);
+  background-position: -158.38444px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(12) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(38.0203px, 0px, 32.4724px) rotateX(0rad) rotateY(0.86394rad) rotateZ(0rad);
+  background-position: -174.22288px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(13) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(40.45085px, 0px, 29.38926px) rotateX(0rad) rotateY(0.94248rad) rotateZ(0rad);
+  background-position: -190.06133px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(14) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(42.63201px, 0px, 26.12493px) rotateX(0rad) rotateY(1.02102rad) rotateZ(0rad);
+  background-position: -205.89977px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(15) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(44.55033px, 0px, 22.69952px) rotateX(0rad) rotateY(1.09956rad) rotateZ(0rad);
+  background-position: -221.73822px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(16) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(46.19398px, 0px, 19.13417px) rotateX(0rad) rotateY(1.1781rad) rotateZ(0rad);
+  background-position: -237.57666px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(17) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(47.55283px, 0px, 15.45085px) rotateX(0rad) rotateY(1.25664rad) rotateZ(0rad);
+  background-position: -253.4151px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(18) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(48.6185px, 0px, 11.67227px) rotateX(0rad) rotateY(1.33518rad) rotateZ(0rad);
+  background-position: -269.25355px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(19) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(49.38442px, 0px, 7.82172px) rotateX(0rad) rotateY(1.41372rad) rotateZ(0rad);
+  background-position: -285.09199px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(20) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(49.84587px, 0px, 3.92295px) rotateX(0rad) rotateY(1.49226rad) rotateZ(0rad);
+  background-position: -300.93044px 0px;
+}
+
+/* line 48, ../sass/drum.scss */
+.mesh > div:nth-child(21) {
+  width: 16.83844px;
+  height: 196px;
+  margin-top: -98px;
+  margin-left: -8.41922px;
+  transform: translate3d(50px, 0px, 0px) rotateX(0rad) rotateY(1.5708rad) rotateZ(0rad);
+  background-position: -316.76888px 0px;
+}

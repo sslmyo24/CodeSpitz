@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSSOM & Vendor Prfix</title>
+</head>
+<style></style>
+<body>
+	<div class="test">test</div>
+</body>
+<script>
+// VEDOR PREFIX => RUNTIME FETCH (실행도중에 처리해야함)
+// UNSUPPORTED PROPERTY (지원하지 않는 속성) => GRACEFUL FAIL (부드럽게 처리)
+// HIERARCHY OPTIMAZE => SHEET.DISABLED = TRUE;
+
+const Style = ( _ => {
+	const prop = new Map, prefix = 'webkit,moz,ms,chrome,o,khtml'.split(',');
+	const NONE = Symbol();
+	const BASE = document.body.style;
+	const getKey = key => {
+		// 이미 한번 검사하여서 캐시에 저장했는가?
+		if (prop.has(key)) return prop.get(key);
+		if (key in BASE) prop.set(key, key);
+		else if (!prefix.some(v => {
+			// some은 v가 배열 안의 원소 이면 멈춤
+			// 없으면 계속 반복된다
+			// 프리픽스 속성은 존재하는가?
+			const newKey = v + key[0].toUpperCase() + key.substr(1);
+			if (newKey in BASE) {
+				prop.set(key, newKey);
+				key = newKey;
+				return true;
+			} else return false;
+		})) {
+			prop.set(key, NONE);
+			key = NONE;
+		}
+		return key;
+	};
+	return class {
+		constructor (style){ this._style = style; }
+		get (key) {
+			key = getKey(key);
+			if (key === NONE) return null; // GRACEFUL FAIL
+			return this._style[key];
+		}
+		set (key, val) {
+			key = getKey(key);
+			if (key !== NONE) this._style[key] = val; // GRACEFUL FAIL
+			return this;
+		}
+	}
+})();
+
+const Rule = class {
+	constructor (rule) {
+		this._rule = rule;
+		this._style = new Style(rule.style);
+	}
+	get (key) {
+		return this._style.get(key);
+	}
+	set (key, val) {
+		this._style.set(key, val);
+		return this;
+	}
+};
+
+const Sheet = class {
+	constructor (sheet) {
+		this._sheet = sheet;
+		this._rules = new Map;
+	}
+	add (selector) {
+		const index = this._sheet.cssRules.length;
+		this._sheet.insertRule(`${selector}{}`, index);
+		const cssRule = this._sheet.cssRules[index];
+		let rule;
+		if (selector.startsWith('@keyframes')) {
+			// 키프레임애니메이션처리
+			rule = new KeyFramesRule(cssRule);
+		} else {
+			rule = new Rule(cssRule);
+		}
+		this._rules.set(selector, rule);
+		return rule;
+	}
+	remove (selector) {
+		if (!this._rules.contains(selector)) return;
+		const rule = this._rules.get(selector)._rule;
+		Array.from(this._sheet.cssRules).some((cssRule, index) => {
+			if (cssRule === rule._rule) {
+				this._sheet.deleteRule(index);
+				return true;
+			}
+		});
+	}
+	get (selector) { return this._rules.get(selector); }
+};
+
+const KeyFramesRule = class {
+	constructor (rule) {
+		this._keyframe = rule;
+		this._rules = new Map;
+	}
+	add (selector) {
+		const index = this._keyframe.cssRules.length;
+		this._keyframe.appendRule(`${selector}{}`);
+		const cssRule = this._keyframe.cssRules[index];
+		const rule = new Rule(cssRule);
+		this._rules.set(selector, rule);
+		return rule;
+	}
+	remove (selector) {
+		if (!this._rules.contains(selector)) return;
+		const rule = this._rules.get(selector)._rule;
+		Array.from(this._sheet.cssRules).some((cssRule, index) => {
+			if (cssRule === rule._rule) {
+				this._sheet.deleteRule(index);
+				return true;
+			}
+		})
+	}
+}
+
+const sheet = new Sheet(document.styleSheets[0]);
+sheet.add('body').set('background', 'red');
+sheet.add('.test').set('cssText', `
+	width:200px;
+	border:1px solid #fff;
+	color:#000;
+	background:#fff;
+	animation:size 1s infinite alternate;
+`);
+const size = sheet.add(`@keyframes size`);
+size.add('from').set('width', '0');
+size.add('to').set('width', '500px');
+
+</script>
+</html>

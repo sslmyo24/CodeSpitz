@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<link rel="stylesheet" href="./stylesheets/drum.css" type="text/css">
+<style>
+
+	html, body {
+		height:100%;
+	}
+
+	body {
+		perspective: 600px;background:#404040;
+	}
+	
+	@keyframes spin {
+		to {transform:rotateX(720deg) rotateY(360deg) rotateZ(360deg);}
+	}
+
+	.ani {
+		animation:spin 4s linear infinite;
+	}
+</style>
+</head>
+<body>
+<div class="mesh ani">
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div class="top"></div>
+	<div class="bottom"></div>
+</div>
+</body>
+</html>
